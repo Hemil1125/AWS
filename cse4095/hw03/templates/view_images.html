@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Images</title>
+</head>
+<body>
+    <h1>Uploaded Images</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Size</th>
+                <th>Modified Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for image in image_list %}
+            <tr>
+                <td><a href="/File_Uploading/{{ image.filename }}">{{ image.filename }}</a></td>
+                <td>{{ image.size }}</td>
+                <td>{{ image.modified_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
